@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class AdminController extends AbstractController
 {
@@ -14,17 +15,19 @@ class AdminController extends AbstractController
     public function index(): Response
     {
         return $this->render('admin/index.html.twig', [
-            'controller_name' => 'AdminController',
+
         ]);
     }
+
 
     /**
-     * @Route("/admin/login", name="admin_account_login")
+     * @Route("/admin/calendar", name="admin_calendar")
      */
-    public function login():Response
+    public function calendar(): Response
     {
-        return $this->render('admin/account/login.tml.twig', [
+        return $this->render('admin/calendar.html.twig', [
 
         ]);
     }
+
 }
